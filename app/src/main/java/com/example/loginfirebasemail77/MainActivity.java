@@ -31,40 +31,11 @@ public class MainActivity extends AppCompatActivity {
     AwesomeValidation awesomeValidation;
     FirebaseAuth firebaseAuth;
 
-    FirebaseAuth.AuthStateListener mAuthListener;
-    public static final int REQUEST_CODE=54654;
-
-    List<AuthUI.IdpConfig> providers = Arrays.asList(
-            new AuthUI.IdpConfig.GoogleBuilder().build(),
-            new AuthUI.IdpConfig.FacebookBuilder().build());
-
-
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_main);
-
-
-        firebaseAuth=FirebaseAuth.getInstance();
-        mAuthListener=new FirebaseAuth.AuthStateListener() {
-            @Override
-            public void onAuthStateChanged(@NonNull FirebaseAuth firebaseAuth) {
-                FirebaseUser user = firebaseAuth.getCurrentUser();
-
-                if(user!=null)
-                {
-                    Toast.makeText(MainActivity.this, "Iniciaste Sesión", Toast.LENGTH_LONG).show();
-                }else
-                {
-                    startActivityForResult(AuthUI.getInstance()
-                    .createSignInIntentBuilder()
-                            .setAvailableProviders(providers)
-                    .setIsSmartLockEnabled(false)
-                    .build(),REQUEST_CODE );
-                }
-            }
-        };
 
 
         et_mail = findViewById(R.id.et_mail);
