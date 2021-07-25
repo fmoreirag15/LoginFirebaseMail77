@@ -112,7 +112,16 @@ public class paciente {
     @Override
     public String toString() {
         return "paciente{" +
-                "nameTutor='" + nameTutor + '\'' +
+                "idpatient='" + idpatient + '\'' +
+                ", nameTutor='" + nameTutor + '\'' +
+                ", firstname='" + firstname + '\'' +
+                ", lastname='" + lastname + '\'' +
+                ", birthname='" + birthname + '\'' +
+                ", gender='" + gender + '\'' +
+                ", imagBase64='" + imagBase64 + '\'' +
+                ", decivename='" + decivename + '\'' +
+                ", macadress='" + macadress + '\'' +
+                ", state='" + state + '\'' +
                 '}';
     }
 }

@@ -13,7 +13,7 @@
         android:text="Name tutor" />
 
     <EditText
-        android:id="@+id/EditarNameTutoor"
+        android:id="@+id/EditNameTutoor"
         android:layout_width="match_parent"
         android:layout_height="wrap_content"
         android:ems="10"
@@ -27,7 +27,7 @@
         android:text="First name" />
 
     <EditText
-        android:id="@+id/Editfirtname"
+        android:id="@+id/Editarrfirtname"
         android:layout_width="match_parent"
         android:layout_height="wrap_content"
         android:ems="10"
@@ -41,7 +41,7 @@
         android:text="lastname" />
 
     <EditText
-        android:id="@+id/Editlastname"
+        android:id="@+id/Editarrlastname"
         android:layout_width="match_parent"
         android:layout_height="wrap_content"
         android:ems="10"
@@ -55,14 +55,14 @@
         android:text="Birth name" />
 
     <EditText
-        android:id="@+id/EditaDate"
+        android:id="@+id/EditarrDate"
         android:layout_width="match_parent"
         android:layout_height="wrap_content"
         android:ems="10"
         android:inputType="date" />
 
     <TextView
-        android:id="@+id/EditartextView5"
+        android:id="@+id/EditarrtextView5"
         android:layout_width="match_parent"
         android:layout_height="wrap_content"
         android:text="Genero" />
@@ -92,7 +92,7 @@
         android:text="Imagen" />
 
     <EditText
-        android:id="@+id/Editarimg"
+        android:id="@+id/Editarrimg"
         android:layout_width="match_parent"
         android:layout_height="wrap_content"
         android:ems="10"
@@ -106,7 +106,7 @@
         android:text="Decivename" />
 
     <EditText
-        android:id="@+id/EditarDecivename"
+        android:id="@+id/EditarrDecivename"
         android:layout_width="match_parent"
         android:layout_height="wrap_content"
         android:ems="10"
@@ -120,7 +120,7 @@
         android:text="Mac" />
 
     <EditText
-        android:id="@+id/EditarMac"
+        android:id="@+id/EditarrMac"
         android:layout_width="match_parent"
         android:layout_height="wrap_content"
         android:ems="10"

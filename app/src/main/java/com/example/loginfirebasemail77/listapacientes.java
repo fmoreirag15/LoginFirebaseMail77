@@ -72,15 +72,18 @@ public class listapacientes extends AppCompatActivity {
             return false;
         }
     });
-       /* listaView.setOnItemClickListener(new AdapterView.OnItemClickListener() {
+        listaView.setOnItemClickListener(new AdapterView.OnItemClickListener() {
 
             @Override
             public void onItemClick(AdapterView<?> parent, View view, int position, long id) {
                 pacienteSelect=(paciente) parent.getItemAtPosition(position);
-                textView.setText(pacienteSelect.getIdpatient());
+                textView.setText(pacienteSelect.getIdpatient()+"\n "
+                                +pacienteSelect.getBirthname()+"\n "
+                                +pacienteSelect.getGender()+"\n "
+                                +pacienteSelect.getMacadress());
             }
         });
-      */
+
 
     }
 

@@ -27,7 +27,7 @@
         android:text="First name" />
 
     <EditText
-        android:id="@+id/Editfirtname"
+        android:id="@+id/Editarfirtname"
         android:layout_width="match_parent"
         android:layout_height="wrap_content"
         android:ems="10"

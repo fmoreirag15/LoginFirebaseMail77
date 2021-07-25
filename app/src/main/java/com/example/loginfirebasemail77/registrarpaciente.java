@@ -24,10 +24,10 @@ public class registrarpaciente extends AppCompatActivity {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_registrarpaciente);
         nameTutor=findViewById(R.id.txtEditNameTutor);
-        firstname=findViewById(R.id.Editfirtname);
+        firstname=findViewById(R.id.Editarfirtname);
         lastname=findViewById(R.id.Editlastname);
         birthname=findViewById(R.id.EditaDate);
-        gender=findViewById(R.id.Editfirtname);
+        gender=findViewById(R.id.Editarfirtname);
         imagBase64=findViewById(R.id.Editarimg);
         decivename=findViewById(R.id.EditarDecivename);
         macadress=findViewById(R.id.EditarMac);
