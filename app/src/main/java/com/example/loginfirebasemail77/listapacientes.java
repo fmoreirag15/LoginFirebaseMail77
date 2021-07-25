@@ -2,12 +2,14 @@ package com.example.loginfirebasemail77;
 
 import androidx.annotation.NonNull;
 import androidx.appcompat.app.AppCompatActivity;
-import androidx.recyclerview.widget.RecyclerView;
 
+import android.content.Intent;
 import android.os.Bundle;
-import android.provider.CalendarContract;
+import android.view.View;
+import android.widget.AdapterView;
 import android.widget.ArrayAdapter;
 import android.widget.ListView;
+import android.widget.TextView;
 
 import com.example.loginfirebasemail77.modelos.paciente;
 import com.google.firebase.FirebaseApp;
@@ -27,6 +29,8 @@ public class listapacientes extends AppCompatActivity {
     FirebaseDatabase firebaseDatabase;
     DatabaseReference databaseReference;
     ListView listaView;
+    paciente pacienteSelect;
+    TextView textView;
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
@@ -34,6 +38,50 @@ public class listapacientes extends AppCompatActivity {
         listaView=findViewById(R.id.listaComponentes);
         inicializarFirebase();
         listapaciente();
+        textView=findViewById(R.id.nombresss);
+
+    listaView.setOnItemLongClickListener(new AdapterView.OnItemLongClickListener() {
+        @Override
+        public boolean onItemLongClick(AdapterView<?> parent, View view, int position, long id) {
+            pacienteSelect=(paciente) parent.getItemAtPosition(position);
+            String idpatient, nameTutor,firstname,lastname, birthname, gender, imagBase64, decivename,macadress,state;
+            idpatient=pacienteSelect.getIdpatient();
+            nameTutor=pacienteSelect.getNameTutor();
+            firstname=pacienteSelect.getFirstname();
+            lastname=pacienteSelect.getLastname();
+            birthname=pacienteSelect.getBirthname();
+            gender=pacienteSelect.getGender();
+            imagBase64=pacienteSelect.getImagBase64();
+            decivename=pacienteSelect.getDecivename();
+            macadress=pacienteSelect.getMacadress();
+            state=pacienteSelect.getState();
+
+            Intent i = new Intent(listapacientes.this,editarpaciente.class);
+            i.putExtra("idpatient",idpatient);
+            i.putExtra("nameTutor",nameTutor);
+            i.putExtra("firstname",firstname);
+            i.putExtra("lastname",lastname);
+            i.putExtra("birthname",birthname);
+            i.putExtra("gender",gender);
+            i.putExtra("imagBase64",imagBase64);
+            i.putExtra("decivename",decivename);
+            i.putExtra("macadress",macadress);
+            i.putExtra("state",state);
+            i.addFlags(Intent.FLAG_ACTIVITY_CLEAR_TOP|Intent.FLAG_ACTIVITY_CLEAR_TASK | Intent.FLAG_ACTIVITY_NEW_TASK);
+            startActivity(i);
+            return false;
+        }
+    });
+       /* listaView.setOnItemClickListener(new AdapterView.OnItemClickListener() {
+
+            @Override
+            public void onItemClick(AdapterView<?> parent, View view, int position, long id) {
+                pacienteSelect=(paciente) parent.getItemAtPosition(position);
+                textView.setText(pacienteSelect.getIdpatient());
+            }
+        });
+      */
+
     }
 
     private void listapaciente() {
@@ -61,7 +109,7 @@ public class listapacientes extends AppCompatActivity {
     private void inicializarFirebase() {
         FirebaseApp.initializeApp(this);
         firebaseDatabase= FirebaseDatabase.getInstance();
-        firebaseDatabase.setPersistenceEnabled(true);
+        //firebaseDatabase.setPersistenceEnabled(true);
         databaseReference=firebaseDatabase.getReference();
     }
 }

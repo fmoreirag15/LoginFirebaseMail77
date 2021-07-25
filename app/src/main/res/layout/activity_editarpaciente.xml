@@ -5,7 +5,7 @@
     android:layout_width="match_parent"
     android:layout_height="match_parent"
     android:orientation="vertical"
-    tools:context=".registrarpaciente">
+    tools:context=".editarpaciente">
 
     <TextView
         android:layout_width="match_parent"
@@ -13,12 +13,12 @@
         android:text="Name tutor" />
 
     <EditText
-        android:id="@+id/txtEditNameTutor"
+        android:id="@+id/EditarNameTutoor"
         android:layout_width="match_parent"
         android:layout_height="wrap_content"
         android:ems="10"
         android:inputType="textPersonName"
-        android:text="Name" />
+        android:text="" />
 
     <TextView
         android:id="@+id/textView2"
@@ -32,7 +32,7 @@
         android:layout_height="wrap_content"
         android:ems="10"
         android:inputType="textPersonName"
-        android:text="Name" />
+        android:text="" />
 
     <TextView
         android:id="@+id/textView3"
@@ -46,7 +46,7 @@
         android:layout_height="wrap_content"
         android:ems="10"
         android:inputType="textPersonName"
-        android:text="Name" />
+        android:text="" />
 
     <TextView
         android:id="@+id/textView4"
@@ -97,7 +97,7 @@
         android:layout_height="wrap_content"
         android:ems="10"
         android:inputType="textPersonName"
-        android:text="Name" />
+        android:text="" />
 
     <TextView
         android:id="@+id/textView7"
@@ -111,7 +111,7 @@
         android:layout_height="wrap_content"
         android:ems="10"
         android:inputType="textPersonName"
-        android:text="Name" />
+        android:text="" />
 
     <TextView
         android:id="@+id/textView8"
@@ -125,13 +125,13 @@
         android:layout_height="wrap_content"
         android:ems="10"
         android:inputType="textPersonName"
-        android:text="Name" />
+        android:text="" />
 
     <Button
         android:id="@+id/button4"
         android:layout_width="match_parent"
         android:layout_height="wrap_content"
-        android:onClick="addFirebasePaciente"
-        android:text="Guardar" />
+        android:text="Guardar cambios"
+    />
 
 </LinearLayout>

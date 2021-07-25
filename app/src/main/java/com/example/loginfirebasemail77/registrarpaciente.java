@@ -23,14 +23,14 @@ public class registrarpaciente extends AppCompatActivity {
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_registrarpaciente);
-        nameTutor=findViewById(R.id.txtNameTutor);
-        firstname=findViewById(R.id.firtname);
-        lastname=findViewById(R.id.txtlastname);
-        birthname=findViewById(R.id.editTextDate);
-        gender=findViewById(R.id.firtname);
-        imagBase64=findViewById(R.id.img);
-        decivename=findViewById(R.id.txtDecivename);
-        macadress=findViewById(R.id.txtMac);
+        nameTutor=findViewById(R.id.txtEditNameTutor);
+        firstname=findViewById(R.id.Editfirtname);
+        lastname=findViewById(R.id.Editlastname);
+        birthname=findViewById(R.id.EditaDate);
+        gender=findViewById(R.id.Editfirtname);
+        imagBase64=findViewById(R.id.Editarimg);
+        decivename=findViewById(R.id.EditarDecivename);
+        macadress=findViewById(R.id.EditarMac);
         inicializarFirebase();
     }
     public void addFirebasePaciente(View view)
@@ -56,7 +56,7 @@ public class registrarpaciente extends AppCompatActivity {
     private void inicializarFirebase() {
         FirebaseApp.initializeApp(this);
         firebaseDatabase=FirebaseDatabase.getInstance();
-        firebaseDatabase.setPersistenceEnabled(true);
+        //firebaseDatabase.setPersistenceEnabled(true);
         databaseReference=firebaseDatabase.getReference();
     }
 }
