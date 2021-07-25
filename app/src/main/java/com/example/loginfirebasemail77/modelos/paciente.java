@@ -12,6 +12,10 @@ public class paciente {
     private String macadress;
     private String state;
 
+    public paciente() {
+
+    }
+
     public paciente(String idpatient, String nameTutor, String firstname, String lastname, String birthname, String gender, String imagBase64, String decivename, String macadress, String state) {
         this.idpatient = idpatient;
         this.nameTutor = nameTutor;
