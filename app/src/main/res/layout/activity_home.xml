@@ -37,4 +37,11 @@
         android:onClick="addPaciente"
         android:text="Agregar paciente" />
 
+    <Button
+        android:id="@+id/button5"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:onClick="goLista"
+        android:text="Lista pacientes" />
+
 </LinearLayout>

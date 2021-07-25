@@ -48,6 +48,7 @@ public class registrarpaciente extends AppCompatActivity {
         p.setState("True");
 
         databaseReference.child("Paciente").child(p.getIdpatient()).setValue(p);
+
         Toast.makeText(this, "Agregado", Toast.LENGTH_SHORT).show();
 
     }
@@ -55,6 +56,7 @@ public class registrarpaciente extends AppCompatActivity {
     private void inicializarFirebase() {
         FirebaseApp.initializeApp(this);
         firebaseDatabase=FirebaseDatabase.getInstance();
+        firebaseDatabase.setPersistenceEnabled(true);
         databaseReference=firebaseDatabase.getReference();
     }
 }

@@ -108,4 +108,11 @@ public class paciente {
     public void setState(String state) {
         this.state = state;
     }
+
+    @Override
+    public String toString() {
+        return "paciente{" +
+                "nameTutor='" + nameTutor + '\'' +
+                '}';
+    }
 }

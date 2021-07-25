@@ -33,6 +33,11 @@ public class HomeActivity extends AppCompatActivity {
             }
         });
     }
+    public void goLista(View view)
+    {
+        Intent i = new Intent(HomeActivity.this,listapacientes.class);
+        startActivity(i);
+    }
     public void addPaciente(View view)
     {
         Intent i = new Intent(this,registrarpaciente.class);
