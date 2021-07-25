@@ -11,7 +11,8 @@
         android:roundIcon="@mipmap/ic_launcher_round"
         android:supportsRtl="true"
         android:theme="@style/AppTheme">
-        <activity android:name=".registrarpaciente"></activity>
+        <activity android:name=".listapacientes"></activity>
+        <activity android:name=".registrarpaciente" />
         <activity android:name=".RegistrarActivity" />
         <activity android:name=".recuperarPassActivity" />
         <activity android:name=".HomeActivity" />
