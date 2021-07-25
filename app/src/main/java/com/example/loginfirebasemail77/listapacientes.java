@@ -37,7 +37,7 @@ public class listapacientes extends AppCompatActivity {
     }
 
     private void listapaciente() {
-        databaseReference.child("Paciente").addValueEventListener(new ValueEventListener() {
+        databaseReference.child("Paciente").orderByChild("firstname").equalTo("Name").addValueEventListener(new ValueEventListener() {
             @Override
             public void onDataChange(@NonNull DataSnapshot snapshot) {
                 list.clear();
