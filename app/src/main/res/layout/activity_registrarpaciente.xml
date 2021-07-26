@@ -129,20 +129,49 @@
                 android:layout_height="wrap_content"
                 android:text="Birth name" />
 
-            <com.google.android.material.textfield.TextInputLayout
-                style="@style/Widget.MaterialComponents.TextInputLayout.OutlinedBox"
+            <LinearLayout
                 android:layout_width="match_parent"
                 android:layout_height="wrap_content"
-                android:layout_marginTop="1dp"
-                android:layout_marginBottom="5dp">
+                android:orientation="horizontal">
 
-                <EditText
-                    android:id="@+id/EditaDate"
-                    android:layout_width="match_parent"
+                <com.google.android.material.textfield.TextInputLayout
+                    style="@style/Widget.MaterialComponents.TextInputLayout.OutlinedBox"
+                    android:layout_width="242dp"
                     android:layout_height="wrap_content"
-                    android:ems="10"
-                    android:inputType="date" />
-            </com.google.android.material.textfield.TextInputLayout>
+                    android:layout_marginTop="1dp"
+                    android:layout_marginBottom="5dp">
+
+                    <EditText
+                        android:id="@+id/EditaDate"
+                        android:layout_width="match_parent"
+                        android:layout_height="wrap_content"
+                        android:clickable="true"
+                        android:ems="10"
+                        android:focusable="false"
+                        android:inputType="date"
+                        android:maxLines="1"
+                        android:textSize="14sp" />
+                </com.google.android.material.textfield.TextInputLayout>
+
+                <Button
+                    android:id="@+id/btnFechaNacimiento"
+                    android:layout_width="10dp"
+                    android:layout_height="match_parent"
+                    android:layout_gravity="clip_vertical|center_vertical|fill_vertical"
+                    android:layout_marginLeft="10sp"
+                    android:layout_weight="1"
+                    android:isScrollContainer="false"
+                    android:onClick="openDataPicker"
+                    android:text="Fecha"
+                    android:textSize="11sp"
+                    android:textStyle="bold"
+                    app:icon="@drawable/icons8_calendar_7_48px"
+                    app:iconGravity="textEnd"
+                    app:iconPadding="12dp"
+                    app:iconSize="25dp"
+                    app:iconTintMode="src_in" />
+
+            </LinearLayout>
 
             <TextView
                 android:id="@+id/EditartextView5"
@@ -161,6 +190,7 @@
                     android:id="@+id/radioButton"
                     android:layout_width="218dp"
                     android:layout_height="wrap_content"
+                    android:checked="true"
                     android:text="Maculino" />
 
                 <RadioButton
