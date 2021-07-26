@@ -1,10 +1,15 @@
 package com.example.loginfirebasemail77;
 
 import androidx.appcompat.app.AppCompatActivity;
+import androidx.core.app.ActivityOptionsCompat;
 
+import android.app.ActivityOptions;
 import android.content.Intent;
+import android.os.Build;
 import android.os.Bundle;
 import android.os.Handler;
+import android.util.Pair;
+import android.view.View;
 import android.view.WindowManager;
 import android.view.animation.Animation;
 import android.view.animation.AnimationUtils;
@@ -26,20 +31,34 @@ public class animation extends AppCompatActivity {
 
 
         TextView textView=findViewById(R.id.textView);
-        TextView textView1=findViewById(R.id.textView5);
-        ImageView imageView=findViewById(R.id.imageView);
+        final TextView textView1=findViewById(R.id.textView5);
+        final ImageView imageView=findViewById(R.id.imageView);
 
         textView.setAnimation(animation_2);
         textView1.setAnimation(animation_2);
         imageView.setAnimation(animation_1);
 
+
+
         new Handler().postDelayed(new Runnable() {
             @Override
             public void run() {
-
                 Intent i = new Intent(animation.this,MainActivity.class);
-                startActivity(i);
-                finish();
+
+                Pair[] pairs= new Pair[2];
+                pairs[0]=new Pair<View, String>(imageView, "logoImagen");
+                pairs[1]=new Pair<View, String>(textView1, "textos");
+                if(Build.VERSION.SDK_INT>=Build.VERSION_CODES.LOLLIPOP)
+                {
+                    ActivityOptions options=ActivityOptions.makeSceneTransitionAnimation(animation.this, pairs);
+                    startActivity(i,options.toBundle());
+                }else
+                {
+                    startActivity(i);
+                    finish();
+                }
+
+
 
             }
         },4000);

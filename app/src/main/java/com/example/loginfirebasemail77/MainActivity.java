@@ -16,6 +16,8 @@ import com.basgeekball.awesomevalidation.ValidationStyle;
 import com.firebase.ui.auth.AuthUI;
 import com.google.android.gms.tasks.OnCompleteListener;
 import com.google.android.gms.tasks.Task;
+import com.google.android.material.textfield.TextInputEditText;
+import com.google.android.material.textfield.TextInputLayout;
 import com.google.firebase.auth.AuthResult;
 import com.google.firebase.auth.FirebaseAuth;
 import com.google.firebase.auth.FirebaseAuthException;
@@ -26,8 +28,8 @@ import java.util.List;
 
 public class MainActivity extends AppCompatActivity {
     Button btn_login,btn_registrar,btn_recuperar;
-    EditText et_mail,et_pass;
-
+    EditText et_pass;
+    TextInputEditText et_mail;
     AwesomeValidation awesomeValidation;
     FirebaseAuth firebaseAuth;
 
