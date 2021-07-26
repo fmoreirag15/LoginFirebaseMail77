@@ -5,6 +5,7 @@ import androidx.appcompat.app.AppCompatActivity;
 import android.os.Bundle;
 import android.view.View;
 import android.widget.EditText;
+import android.widget.TextView;
 import android.widget.Toast;
 
 import com.example.loginfirebasemail77.modelos.paciente;
@@ -19,6 +20,7 @@ public class registrarpaciente extends AppCompatActivity {
     EditText  nameTutor, firstname, lastname, birthname, gender, imagBase64, decivename,macadress;
     FirebaseDatabase firebaseDatabase;
     DatabaseReference databaseReference;
+    String idUsuario;
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
@@ -31,6 +33,9 @@ public class registrarpaciente extends AppCompatActivity {
         imagBase64=findViewById(R.id.Editarimg);
         decivename=findViewById(R.id.EditarDecivename);
         macadress=findViewById(R.id.EditarMac);
+        //TextView textView=findViewById(R.id.textView4);
+        idUsuario=getIntent().getExtras().getString("idUsuario");
+        //textView.setText(idUsuario);
         inicializarFirebase();
     }
     public void addFirebasePaciente(View view)
@@ -45,6 +50,7 @@ public class registrarpaciente extends AppCompatActivity {
         p.setImagBase64(imagBase64.getText().toString());
         p.setDecivename(decivename.getText().toString());
         p.setMacadress(macadress.getText().toString());
+        p.setIdUsuario(idUsuario);
         p.setState("True");
 
         databaseReference.child("Paciente").child(p.getIdpatient()).setValue(p);

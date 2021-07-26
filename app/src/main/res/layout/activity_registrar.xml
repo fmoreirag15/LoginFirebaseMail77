@@ -13,12 +13,12 @@
 
     <ImageView
         android:id="@+id/imageView2"
-        android:layout_width="298dp"
-        android:layout_height="172dp"
+        android:layout_width="275dp"
+        android:layout_height="160dp"
         app:srcCompat="@drawable/na_3" />
 
     <TextView
-        android:textSize="50sp"
+        android:textSize="40sp"
         android:textColor="#000"
         android:gravity="center"
         android:fontFamily="@font/abel"
@@ -43,19 +43,48 @@
     <com.google.android.material.textfield.TextInputLayout
         android:layout_width="match_parent"
         android:layout_height="wrap_content"
-        android:layout_marginTop="30dp"
-        android:layout_marginBottom="10dp"
+        android:layout_marginTop="10dp"
+        android:layout_marginBottom="0dp"
         style="@style/Widget.MaterialComponents.TextInputLayout.OutlinedBox">
+
         <EditText
             android:id="@+id/et_mail"
-            android:layout_marginBottom="10dp"
-            android:textColorHint="@color/colorPrimary"
-            android:hint="Email"
             android:layout_width="match_parent"
-            android:layout_height="wrap_content">
+            android:layout_height="50dp"
+            android:layout_marginBottom="10dp"
+            android:hint="Email"
+            android:textColorHint="@color/colorPrimary"></EditText>
+    </com.google.android.material.textfield.TextInputLayout>
+    <com.google.android.material.textfield.TextInputLayout
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:layout_marginTop="0dp"
+        android:layout_marginBottom="5dp"
+        style="@style/Widget.MaterialComponents.TextInputLayout.OutlinedBox">
+        <EditText
+            android:id="@+id/username"
+            android:textColorHint="@color/colorPrimary"
+            android:hint="Nombre de usario"
+            android:layout_width="match_parent"
+            android:layout_height="50dp">
         </EditText>
     </com.google.android.material.textfield.TextInputLayout>
-
+    <com.google.android.material.textfield.TextInputLayout
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:layout_marginTop="0dp"
+        android:layout_marginBottom="5dp"
+        style="@style/Widget.MaterialComponents.TextInputLayout.OutlinedBox">
+        <EditText
+            android:id="@+id/numero"
+            android:layout_marginBottom="10dp"
+            android:textColorHint="@color/colorPrimary"
+            android:hint="Número celular"
+            android:layout_width="match_parent"
+            android:inputType="number"
+            android:layout_height="50dp">
+        </EditText>
+    </com.google.android.material.textfield.TextInputLayout>
 
 
 
@@ -69,9 +98,9 @@
         android:id="@+id/et_pass"
         android:layout_marginBottom="10dp"
         android:textColorHint="@color/colorPrimary"
-        android:hint="Coloque password"
+        android:hint="Password"
         android:layout_width="match_parent"
-        android:layout_height="wrap_content"
+        android:layout_height="50dp"
         android:inputType="textPassword">
     </EditText>
 </com.google.android.material.textfield.TextInputLayout>
@@ -86,9 +115,9 @@
             android:id="@+id/confirmar_pass"
             android:layout_marginBottom="10dp"
             android:textColorHint="@color/colorPrimary"
-            android:hint="Coloque password"
+            android:hint="Confirmar password"
             android:layout_width="match_parent"
-            android:layout_height="wrap_content"
+            android:layout_height="50dp"
             android:inputType="textPassword">
         </EditText>
     </com.google.android.material.textfield.TextInputLayout>
@@ -96,8 +125,8 @@
     <Button
         android:id="@+id/btn_registrar"
         android:layout_width="match_parent"
-        android:layout_height="70dp"
-        android:layout_marginTop="20dp"
+        android:layout_height="50dp"
+        android:layout_marginTop="5dp"
         android:text="Registrar"
         android:textColor="#fff"
         app:cornerRadius="10dp">
@@ -106,8 +135,7 @@
     <Button
         android:id="@+id/existeCuenta"
         android:layout_width="match_parent"
-        android:layout_height="40dp"
-        android:layout_margin="0dp"
+        android:layout_height="50dp"
         android:textAlignment="textEnd"
         android:background="#00FFFFFF"
         android:text="Ya tengo una cuenta"

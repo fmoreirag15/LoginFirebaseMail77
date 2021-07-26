@@ -31,11 +31,13 @@ public class listapacientes extends AppCompatActivity {
     ListView listaView;
     paciente pacienteSelect;
     TextView textView;
+    String idUsuario;
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_listapacientes);
         listaView=findViewById(R.id.listaComponentes);
+        idUsuario=getIntent().getExtras().getString("idUsuario");
         inicializarFirebase();
         listapaciente();
         textView=findViewById(R.id.nombresss);
@@ -67,6 +69,7 @@ public class listapacientes extends AppCompatActivity {
             i.putExtra("decivename",decivename);
             i.putExtra("macadress",macadress);
             i.putExtra("state",state);
+
             i.addFlags(Intent.FLAG_ACTIVITY_CLEAR_TOP|Intent.FLAG_ACTIVITY_CLEAR_TASK | Intent.FLAG_ACTIVITY_NEW_TASK);
             startActivity(i);
             return false;
@@ -88,7 +91,7 @@ public class listapacientes extends AppCompatActivity {
     }
 
     private void listapaciente() {
-        databaseReference.child("Paciente").addValueEventListener(new ValueEventListener() {
+        databaseReference.child("Paciente").orderByChild("idTutor").equalTo(idUsuario).addValueEventListener(new ValueEventListener() {
             @Override
             public void onDataChange(@NonNull DataSnapshot snapshot) {
                 list.clear();
@@ -96,7 +99,6 @@ public class listapacientes extends AppCompatActivity {
                 {
                     paciente p= objShaptshot.getValue(paciente.class);
                     list.add(p);
-
                     arrayAdapterPaciente= new ArrayAdapter<paciente>(listapacientes.this, android.R.layout.simple_list_item_1, list);
                     listaView.setAdapter(arrayAdapterPaciente);
                 }

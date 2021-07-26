@@ -1,84 +1,241 @@
 <?xml version="1.0" encoding="utf-8"?>
-<androidx.constraintlayout.widget.ConstraintLayout xmlns:android="http://schemas.android.com/apk/res/android"
+<LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
     xmlns:app="http://schemas.android.com/apk/res-auto"
     xmlns:tools="http://schemas.android.com/tools"
     android:layout_width="match_parent"
     android:layout_height="match_parent"
-    android:orientation="vertical"
     android:gravity="center"
+    android:isScrollContainer="true"
+    android:orientation="vertical"
     android:paddingLeft="10dp"
     android:paddingRight="10dp"
-    android:paddingTop="30dp"
     tools:context=".HomeActivity">
 
-    <TextView
-        android:id="@+id/textView10"
+    <ScrollView
         android:layout_width="match_parent"
-        android:layout_height="wrap_content"
-        android:fontFamily="@font/abel"
-        android:text="Bienvenido!"
-        android:textColor="#1E1E1E"
-        android:textSize="50dp"
-        android:textStyle="bold"
-        app:layout_constraintStart_toStartOf="parent"
-        app:layout_constraintTop_toTopOf="parent" />
+        android:layout_height="wrap_content">
 
-    <TextView
-        android:id="@+id/email"
-        android:layout_width="wrap_content"
-        android:layout_height="wrap_content"
-        android:layout_marginTop="50dp"
-        android:fontFamily="@font/abel"
-        android:text="Login con exito"
-        android:textColor="#000"
-        android:textSize="25sp"
-        app:layout_constraintStart_toStartOf="parent"
-        app:layout_constraintTop_toTopOf="parent">
+        <LinearLayout
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:orientation="vertical">
 
-    </TextView>
+            <LinearLayout
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:layout_marginTop="20dp"
+                android:orientation="horizontal">
 
-    <TextView
-        android:layout_width="wrap_content"
-        android:layout_height="wrap_content"
-        android:layout_marginTop="82dp"
-        android:fontFamily="@font/abel"
-        android:text="Empieza a cuidar a tu familiar"
-        android:textColor="#686868"
-        android:textSize="15sp"
-        app:layout_constraintStart_toStartOf="parent"
-        app:layout_constraintTop_toTopOf="parent" />
+                <LinearLayout
+                    android:layout_width="264dp"
+                    android:layout_height="wrap_content"
+                    android:orientation="vertical">
 
-    <Button
-        android:id="@+id/btn_cerrar"
-        android:layout_width="wrap_content"
-        android:layout_height="wrap_content"
-        android:background="@color/colorPrimary"
-        android:padding="10dp"
-        android:text="Cerrar sesion"
-        android:textColor="#fff"
-        app:layout_constraintEnd_toEndOf="parent"
-        app:layout_constraintTop_toTopOf="parent">
+                    <TextView
+                        android:id="@+id/textView10"
+                        android:layout_width="289dp"
+                        android:layout_height="wrap_content"
+                        android:fontFamily="@font/abel"
+                        android:text="Bienvenido!"
+                        android:textColor="#1E1E1E"
+                        android:textSize="50dp"
+                        android:textStyle="bold"
+                        app:layout_constraintStart_toStartOf="parent"
+                        app:layout_constraintTop_toTopOf="parent" />
 
-    </Button>
+                    <TextView
+                        android:id="@+id/email"
+                        android:layout_width="match_parent"
+                        android:layout_height="wrap_content"
+                        android:fontFamily="@font/abel"
+                        android:text="TextView"
+                        android:textSize="15dp" />
 
-    <Button
-        android:id="@+id/button3"
-        android:layout_width="match_parent"
-        android:layout_height="wrap_content"
-        android:onClick="addPaciente"
-        android:text="Agregar paciente"
-        tools:layout_editor_absoluteX="0dp"
-        tools:layout_editor_absoluteY="221dp" />
+                    <TextView
+                        android:id="@+id/textView11"
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"
 
-    <Button
-        android:id="@+id/button5"
-        android:layout_width="match_parent"
-        android:layout_height="wrap_content"
-        android:onClick="goLista"
-        android:text="Lista pacientes"
-        tools:layout_editor_absoluteX="-16dp"
-        tools:layout_editor_absoluteY="298dp" />
+                        android:fontFamily="@font/abel"
+                        android:text="Empieza a cuidar a tu familiar"
+                        android:textColor="#686868"
+                        android:textSize="15dp"
+                        app:layout_constraintStart_toStartOf="parent"
+                        app:layout_constraintTop_toTopOf="parent" />
 
 
+                </LinearLayout>
 
-</androidx.constraintlayout.widget.ConstraintLayout>
+                <Button
+                    android:id="@+id/btn_cerrar"
+                    android:layout_width="127dp"
+                    android:layout_height="46dp"
+                    android:fontFamily="@font/abel"
+                    android:padding="10dp"
+                    android:text="Cerrar"
+                    android:textColor="#fff"
+                    app:cornerRadius="50dp"
+                    app:icon="@drawable/salir1"
+                    app:iconGravity="start"
+                    app:iconSize="20dp"
+                    app:layout_constraintEnd_toEndOf="parent"
+                    app:layout_constraintTop_toTopOf="parent"></Button>
+
+            </LinearLayout>
+
+            <LinearLayout
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:layout_marginTop="10dp"
+                android:orientation="horizontal">
+
+                <com.google.android.material.textfield.TextInputLayout
+                    style="@style/Widget.MaterialComponents.TextInputLayout.OutlinedBox"
+                    android:layout_width="324dp"
+                    android:layout_height="wrap_content"
+                    android:layout_marginTop="1dp"
+                    android:layout_marginBottom="10dp">
+
+                    <EditText
+                        android:id="@+id/editTextTextPersonName"
+                        android:layout_width="match_parent"
+                        android:layout_height="40dp"
+                        android:layout_weight="1"
+                        android:ems="10"
+                        android:hint="Ingrese nombre de paciente"
+                        android:inputType="textPersonName" />
+
+                </com.google.android.material.textfield.TextInputLayout>
+
+                <Button
+                    android:id="@+id/button5"
+                    android:layout_width="50dp"
+                    android:layout_height="50dp"
+                    android:layout_marginLeft="10dp"
+                    android:layout_marginTop="-8dp"
+                    app:cornerRadius="8dp"
+                    app:icon="@drawable/lupa"
+                    app:iconSize="20dp"
+                    app:iconTint="#F6EEEE" />
+
+
+            </LinearLayout>
+
+            <LinearLayout
+                android:layout_width="match_parent"
+                android:layout_height="220dp"
+                android:orientation="vertical"
+                android:paddingTop="10dp">
+
+                <LinearLayout
+                    android:layout_width="match_parent"
+                    android:layout_height="106dp"
+                    android:orientation="horizontal">
+
+                    <Button
+                        android:id="@+id/btnPaciente"
+                        android:layout_width="wrap_content"
+                        android:layout_height="94dp"
+                        android:layout_margin="10dp"
+                        android:layout_weight="1"
+                        android:backgroundTint="#552089"
+                        android:fontFamily="@font/abel"
+                        android:onClick="addPaciente"
+                        android:text="Paciente"
+                        android:textAlignment="textStart"
+                        android:textIsSelectable="false"
+                        android:textSize="15dp"
+                        android:textStyle="bold"
+                        app:cornerRadius="10dp"
+                        app:icon="@drawable/pacient"
+                        app:iconSize="55dp" />
+
+                    <Button
+                        android:id="@+id/btnMapa"
+                        android:layout_width="wrap_content"
+                        android:layout_height="94dp"
+                        android:layout_margin="10dp"
+                        android:layout_weight="1"
+                        android:backgroundTint="#FF824D"
+                        android:fontFamily="@font/abel"
+                        android:text="Ver mapa"
+                        android:textAlignment="textStart"
+                        android:textIsSelectable="false"
+                        android:textSize="15sp"
+                        android:textStyle="bold"
+                        app:cornerRadius="10dp"
+                        app:icon="@drawable/mapa"
+                        app:iconSize="55dp" />
+                </LinearLayout>
+
+                <LinearLayout
+                    android:layout_width="match_parent"
+                    android:layout_height="144dp"
+                    android:orientation="horizontal">
+
+                    <Button
+                        android:id="@+id/btnAlertas"
+                        android:layout_width="wrap_content"
+                        android:layout_height="94dp"
+                        android:layout_margin="10dp"
+                        android:layout_weight="1"
+                        android:backgroundTint="#048ADA"
+                        android:fontFamily="@font/abel"
+                        android:text="Historial"
+                        android:textAlignment="textStart"
+                        android:textIsSelectable="false"
+                        android:textSize="15dp"
+                        android:textStyle="bold"
+                        app:cornerRadius="10dp"
+                        app:icon="@drawable/pacient"
+                        app:iconSize="55dp" />
+
+                    <Button
+                        android:id="@+id/btnReconocimiento"
+                        android:layout_width="wrap_content"
+                        android:layout_height="94dp"
+                        android:layout_margin="10dp"
+                        android:layout_weight="1"
+                        android:backgroundTint="#E8027D"
+                        android:fontFamily="@font/abel"
+                        android:text="Ubicación"
+                        android:textAlignment="textStart"
+                        android:textIsSelectable="false"
+                        android:textSize="15sp"
+                        android:textStyle="bold"
+                        app:cornerRadius="10dp"
+                        app:icon="@drawable/mapa"
+                        app:iconSize="55dp" />
+                </LinearLayout>
+
+            </LinearLayout>
+
+            <LinearLayout
+                android:layout_width="match_parent"
+                android:layout_height="495dp"
+                android:orientation="vertical">
+
+                <TextView
+                    android:id="@+id/textView13"
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:layout_marginTop="10dp"
+                    android:fontFamily="@font/abel"
+                    android:text="Notificaciones del día"
+                    android:textColor="#474646"
+                    android:textSize="17dp"
+                    android:textStyle="bold" />
+
+                <androidx.recyclerview.widget.RecyclerView
+                    android:layout_width="match_parent"
+                    android:layout_height="444dp">
+
+                </androidx.recyclerview.widget.RecyclerView>
+
+            </LinearLayout>
+
+        </LinearLayout>
+    </ScrollView>
+
+
+</LinearLayout>

@@ -7,22 +7,32 @@ import android.content.Intent;
 import android.os.Bundle;
 import android.util.Patterns;
 import android.view.View;
+import android.widget.ArrayAdapter;
 import android.widget.Button;
 import android.widget.EditText;
 import android.widget.Toast;
 
 import com.basgeekball.awesomevalidation.AwesomeValidation;
 import com.basgeekball.awesomevalidation.ValidationStyle;
+import com.example.loginfirebasemail77.modelos.paciente;
+import com.example.loginfirebasemail77.modelos.usuario;
 import com.firebase.ui.auth.AuthUI;
 import com.google.android.gms.tasks.OnCompleteListener;
 import com.google.android.gms.tasks.Task;
 import com.google.android.material.textfield.TextInputEditText;
 import com.google.android.material.textfield.TextInputLayout;
+import com.google.firebase.FirebaseApp;
 import com.google.firebase.auth.AuthResult;
 import com.google.firebase.auth.FirebaseAuth;
 import com.google.firebase.auth.FirebaseAuthException;
 import com.google.firebase.auth.FirebaseUser;
+import com.google.firebase.database.DataSnapshot;
+import com.google.firebase.database.DatabaseError;
+import com.google.firebase.database.DatabaseReference;
+import com.google.firebase.database.FirebaseDatabase;
+import com.google.firebase.database.ValueEventListener;
 
+import java.util.ArrayList;
 import java.util.Arrays;
 import java.util.List;
 
@@ -30,15 +40,17 @@ public class MainActivity extends AppCompatActivity {
     Button btn_login,btn_registrar,btn_recuperar;
     EditText et_pass;
     TextInputEditText et_mail;
+    EditText username, idUsuario;
     AwesomeValidation awesomeValidation;
     FirebaseAuth firebaseAuth;
-
-
+    FirebaseDatabase firebaseDatabase;
+    DatabaseReference databaseReference;
+    List<usuario>  list=new ArrayList<usuario>();
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_main);
-
+        inicializarFirebase();
 
         et_mail = findViewById(R.id.et_mail);
         et_pass = findViewById(R.id.et_pass);
@@ -71,11 +83,9 @@ public class MainActivity extends AppCompatActivity {
                     firebaseAuth.signInWithEmailAndPassword(mail,pass).addOnCompleteListener(new OnCompleteListener<AuthResult>() {
                         @Override
                         public void onComplete(Task<AuthResult> task) {
-
                             if(task.isSuccessful())
                             {
-                               irahome();
-
+                            listapaciente();
                             }else
                             {
                                 String errorCode = ((FirebaseAuthException) task.getException()).getErrorCode();
@@ -96,13 +106,46 @@ public class MainActivity extends AppCompatActivity {
         });
 
     }
-    public void irahome()
+    private void inicializarFirebase() {
+        FirebaseApp.initializeApp(this);
+        firebaseDatabase= FirebaseDatabase.getInstance();
+        databaseReference=firebaseDatabase.getReference();
+    }
+    public void irahome(String username, String idUseri)
     {
+
         Intent i = new Intent(this,HomeActivity.class);
         i.putExtra("mail",et_mail.getText().toString());
+        i.putExtra("userName",username);
+        i.putExtra("id_usuario",idUseri);
         i.addFlags(Intent.FLAG_ACTIVITY_CLEAR_TOP|Intent.FLAG_ACTIVITY_CLEAR_TASK | Intent.FLAG_ACTIVITY_NEW_TASK);
         startActivity(i);
     }
+
+    private void listapaciente() {
+        databaseReference.child("Usuarios").orderByChild("email").equalTo(et_mail.getText().toString()).addValueEventListener(new ValueEventListener() {
+            @Override
+            public void onDataChange(@NonNull DataSnapshot snapshot) {
+
+                for (DataSnapshot objShaptshot : snapshot.getChildren())
+                {
+                    usuario u = objShaptshot.getValue(usuario.class);
+                    list.add(u);
+                    irahome(u.getUsername(),u.getIdUsuario());
+                    //System.out.println("username: "+u.getUsername()+" id: "+u.getIdUsuario());
+                    //username.setText(u.getUsername());
+                    //idUsuario.setText(u.getIdUsuario());
+
+                }
+
+            }
+            @Override
+            public void onCancelled(@NonNull DatabaseError error) {
+
+            }
+        });
+    }
+
     private void dameToastdeerror(String error) {
 
         switch (error) {

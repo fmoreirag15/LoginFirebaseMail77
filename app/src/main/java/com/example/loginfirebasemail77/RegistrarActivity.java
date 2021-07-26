@@ -13,24 +13,32 @@ import android.widget.Toast;
 
 import com.basgeekball.awesomevalidation.AwesomeValidation;
 import com.basgeekball.awesomevalidation.ValidationStyle;
+import com.example.loginfirebasemail77.modelos.usuario;
 import com.google.android.gms.tasks.OnCompleteListener;
 import com.google.android.gms.tasks.Task;
+import com.google.firebase.FirebaseApp;
 import com.google.firebase.auth.AuthResult;
 import com.google.firebase.auth.FirebaseAuth;
 import com.google.firebase.auth.FirebaseAuthException;
+import com.google.firebase.database.DatabaseReference;
+import com.google.firebase.database.FirebaseDatabase;
+
+import java.util.UUID;
 
 public class RegistrarActivity extends AppCompatActivity {
     EditText et_mail,et_pass;
     Button btn_registrar;
     AwesomeValidation awesomeValidation;
     FirebaseAuth firebaseAuth;
+    EditText  userName,numero;
 
-
+    FirebaseDatabase firebaseDatabase;
+    DatabaseReference databaseReference;
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_registrar);
-
+        inicializarFirebase();
         firebaseAuth = FirebaseAuth.getInstance();
 
         awesomeValidation = new AwesomeValidation(ValidationStyle.BASIC);
@@ -39,7 +47,12 @@ public class RegistrarActivity extends AppCompatActivity {
 
         et_mail = findViewById(R.id.et_mail);
         et_pass = findViewById(R.id.et_pass);
+        userName=findViewById(R.id.username);
+        numero=findViewById(R.id.numero);
+
+
         btn_registrar = findViewById(R.id.btn_registrar);
+
 
         btn_registrar.setOnClickListener(new View.OnClickListener() {
             @Override
@@ -53,12 +66,23 @@ public class RegistrarActivity extends AppCompatActivity {
                         @Override
                         public void onComplete(@NonNull Task<AuthResult> task) {
                             if(task.isSuccessful()){
+                                guardarTabla();
                                 Toast.makeText(RegistrarActivity.this, "Usuario creado con exito", Toast.LENGTH_SHORT).show();
                                 finish();
                             }else {
                                 String errorCode = ((FirebaseAuthException) task.getException()).getErrorCode();
                                 dameToastdeerror(errorCode);
                             }
+                        }
+
+                        private void guardarTabla() {
+                            usuario u= new usuario();
+                            u.setIdUsuario(UUID.randomUUID().toString());
+                            u.setUsername(userName.getText().toString());
+                            u.setEmail(mail);
+                            u.setNumero(numero.getText().toString());
+                            databaseReference.child("Usuarios").child(u.getIdUsuario()).setValue(u);
+
                         }
                     });
                 }else {
@@ -72,7 +96,11 @@ public class RegistrarActivity extends AppCompatActivity {
 
 
     }//fin del oncreate!
-
+    private void inicializarFirebase() {
+        FirebaseApp.initializeApp(this);
+        firebaseDatabase= FirebaseDatabase.getInstance();
+        databaseReference=firebaseDatabase.getReference();
+    }
     private void dameToastdeerror(String error) {
 
         switch (error) {

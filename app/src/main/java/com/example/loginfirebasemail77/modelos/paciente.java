@@ -11,12 +11,13 @@ public class paciente {
     private String decivename;
     private String macadress;
     private String state;
+    private String idUsuario;
 
     public paciente() {
 
     }
 
-    public paciente(String idpatient, String nameTutor, String firstname, String lastname, String birthname, String gender, String imagBase64, String decivename, String macadress, String state) {
+    public paciente(String idpatient, String nameTutor, String firstname, String lastname, String birthname, String gender, String imagBase64, String decivename, String macadress, String state, String idUsuario) {
         this.idpatient = idpatient;
         this.nameTutor = nameTutor;
         this.firstname = firstname;
@@ -27,6 +28,7 @@ public class paciente {
         this.decivename = decivename;
         this.macadress = macadress;
         this.state = state;
+        this.idUsuario = idUsuario;
     }
 
     public String getIdpatient() {
@@ -109,6 +111,14 @@ public class paciente {
         this.state = state;
     }
 
+    public String getIdUsuario() {
+        return idUsuario;
+    }
+
+    public void setIdUsuario(String idUsuario) {
+        this.idUsuario = idUsuario;
+    }
+
     @Override
     public String toString() {
         return "paciente{" +
@@ -122,6 +132,7 @@ public class paciente {
                 ", decivename='" + decivename + '\'' +
                 ", macadress='" + macadress + '\'' +
                 ", state='" + state + '\'' +
+                ", idUsuario='" + idUsuario + '\'' +
                 '}';
     }
 }
