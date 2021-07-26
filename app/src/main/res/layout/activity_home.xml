@@ -12,6 +12,7 @@
     tools:context=".HomeActivity">
 
     <ScrollView
+        android:scrollbars="none"
         android:layout_width="match_parent"
         android:layout_height="wrap_content">
 
@@ -38,7 +39,7 @@
                         android:fontFamily="@font/abel"
                         android:text="Bienvenido!"
                         android:textColor="#1E1E1E"
-                        android:textSize="50dp"
+                        android:textSize="50sp"
                         android:textStyle="bold"
                         app:layout_constraintStart_toStartOf="parent"
                         app:layout_constraintTop_toTopOf="parent" />
@@ -59,7 +60,7 @@
                         android:fontFamily="@font/abel"
                         android:text="Empieza a cuidar a tu familiar"
                         android:textColor="#686868"
-                        android:textSize="15dp"
+                        android:textSize="15sp"
                         app:layout_constraintStart_toStartOf="parent"
                         app:layout_constraintTop_toTopOf="parent" />
 

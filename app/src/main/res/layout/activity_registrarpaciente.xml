@@ -9,13 +9,14 @@
     tools:context=".registrarpaciente">
 
     <ScrollView
+        android:scrollbars="none"
         android:layout_width="match_parent"
-        android:layout_height="match_parent">
+        android:layout_height="wrap_content">
 
         <LinearLayout
             android:layout_width="match_parent"
             android:layout_height="wrap_content"
-            android:orientation="vertical" >
+            android:orientation="vertical">
 
             <TextView
                 android:id="@+id/textView14"
@@ -30,10 +31,10 @@
                 tools:ignore="RtlCompat"></TextView>
 
             <TextView
-                android:layout_marginBottom="10dp"
                 android:id="@+id/textView15"
                 android:layout_width="match_parent"
                 android:layout_height="wrap_content"
+                android:layout_marginBottom="10dp"
                 android:fontFamily="@font/abel"
                 android:gravity="center"
                 android:text="Esta información estara segura"
@@ -67,6 +68,7 @@
                 android:layout_width="match_parent"
                 android:layout_height="wrap_content"
                 android:text="Nombres del paciente" />
+
             <com.google.android.material.textfield.TextInputLayout
                 style="@style/Widget.MaterialComponents.TextInputLayout.OutlinedBox"
                 android:layout_width="match_parent"
@@ -87,6 +89,7 @@
                 android:layout_width="match_parent"
                 android:layout_height="wrap_content"
                 android:text="Apellidos del paciente" />
+
             <com.google.android.material.textfield.TextInputLayout
                 style="@style/Widget.MaterialComponents.TextInputLayout.OutlinedBox"
                 android:layout_width="match_parent"
@@ -101,35 +104,39 @@
                     android:ems="10"
                     android:inputType="textPersonName" />
             </com.google.android.material.textfield.TextInputLayout>
+
             <TextView
                 android:id="@+id/textView4"
                 android:layout_width="match_parent"
                 android:layout_height="wrap_content"
                 android:text="Birth name" />
+
             <com.google.android.material.textfield.TextInputLayout
                 style="@style/Widget.MaterialComponents.TextInputLayout.OutlinedBox"
                 android:layout_width="match_parent"
                 android:layout_height="wrap_content"
                 android:layout_marginTop="1dp"
                 android:layout_marginBottom="5dp">
-            <EditText
-                android:id="@+id/EditaDate"
-                android:layout_width="match_parent"
-                android:layout_height="wrap_content"
-                android:ems="10"
-                android:inputType="date" />
+
+                <EditText
+                    android:id="@+id/EditaDate"
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:ems="10"
+                    android:inputType="date" />
             </com.google.android.material.textfield.TextInputLayout>
+
             <TextView
-                android:layout_marginTop="10dp"
                 android:id="@+id/EditartextView5"
                 android:layout_width="match_parent"
                 android:layout_height="wrap_content"
+                android:layout_marginTop="10dp"
                 android:text="Genero" />
 
             <RadioGroup
-                android:layout_marginBottom="15dp"
                 android:layout_width="match_parent"
                 android:layout_height="wrap_content"
+                android:layout_marginBottom="15dp"
                 android:orientation="horizontal">
 
                 <RadioButton
@@ -144,11 +151,13 @@
                     android:layout_height="wrap_content"
                     android:text="Femenino" />
             </RadioGroup>
+
             <TextView
                 android:id="@+id/textView6"
                 android:layout_width="match_parent"
                 android:layout_height="wrap_content"
                 android:text="Imagen" />
+
             <com.google.android.material.textfield.TextInputLayout
                 style="@style/Widget.MaterialComponents.TextInputLayout.OutlinedBox"
                 android:layout_width="match_parent"
@@ -163,6 +172,60 @@
                     android:ems="10"
                     android:inputType="textPersonName" />
             </com.google.android.material.textfield.TextInputLayout>
+
+            <androidx.constraintlayout.widget.ConstraintLayout
+                android:layout_width="match_parent"
+                android:layout_height="167dp">
+
+                <ImageView
+                    android:id="@+id/imageView4"
+                    android:layout_width="184dp"
+                    android:layout_height="127dp"
+                    android:layout_marginTop="36dp"
+                    android:layout_weight="1"
+                    app:layout_constraintEnd_toEndOf="parent"
+                    app:layout_constraintTop_toTopOf="parent"
+                    app:srcCompat="@drawable/camara" />
+
+                <TextView
+                    android:id="@+id/textView17"
+                    android:layout_width="204dp"
+                    android:layout_height="64dp"
+                    android:layout_marginStart="5dp"
+                    android:layout_marginTop="44dp"
+                    android:fontFamily="@font/abel"
+                    android:text="Información del dispositivo"
+                    android:textColor="#323131"
+                    android:textSize="24sp"
+                    android:textStyle="bold"
+                    app:layout_constraintStart_toStartOf="parent"
+                    app:layout_constraintTop_toTopOf="parent" />
+
+                <TextView
+                    android:id="@+id/textView18"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:layout_marginStart="5dp"
+                    android:layout_marginTop="108dp"
+                    android:fontFamily="@font/abel"
+                    android:text="¿Que debo hacer?"
+                    android:textStyle="bold"
+                    app:layout_constraintStart_toStartOf="parent"
+                    app:layout_constraintTop_toTopOf="parent" />
+
+                <TextView
+                    android:id="@+id/textView19"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:layout_marginStart="5dp"
+                    android:fontFamily="@font/abel"
+                    android:text="Obtener mas información"
+                    android:textColor="#4F687C"
+                    android:textSize="13sp"
+                    android:textStyle="bold"
+                    app:layout_constraintStart_toStartOf="parent"
+                    app:layout_constraintTop_toBottomOf="@+id/textView18" />
+            </androidx.constraintlayout.widget.ConstraintLayout>
 
             <TextView
                 android:id="@+id/textView12"
@@ -181,6 +244,7 @@
                 android:layout_width="match_parent"
                 android:layout_height="wrap_content"
                 android:text="Decivename" />
+
             <com.google.android.material.textfield.TextInputLayout
                 style="@style/Widget.MaterialComponents.TextInputLayout.OutlinedBox"
                 android:layout_width="match_parent"
@@ -195,11 +259,13 @@
                     android:ems="10"
                     android:inputType="textPersonName" />
             </com.google.android.material.textfield.TextInputLayout>
+
             <TextView
                 android:id="@+id/textView8"
                 android:layout_width="match_parent"
                 android:layout_height="wrap_content"
                 android:text="Mac" />
+
             <com.google.android.material.textfield.TextInputLayout
                 style="@style/Widget.MaterialComponents.TextInputLayout.OutlinedBox"
                 android:layout_width="match_parent"
@@ -214,6 +280,7 @@
                     android:ems="10"
                     android:inputType="textPersonName" />
             </com.google.android.material.textfield.TextInputLayout>
+
             <Button
                 android:id="@+id/button4"
                 android:layout_width="match_parent"
