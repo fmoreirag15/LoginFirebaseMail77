@@ -206,7 +206,6 @@
                         android:layout_weight="1"
                         android:backgroundTint="#048ADA"
                         android:fontFamily="@font/abel"
-                        android:text="Historial"
                         android:textAlignment="textStart"
                         android:textIsSelectable="false"
                         android:textSize="15dp"
@@ -223,13 +222,14 @@
                         android:layout_weight="1"
                         android:backgroundTint="#E8027D"
                         android:fontFamily="@font/abel"
-                        android:text="Ubicación"
+                        android:onClick="goReconocimientoIdioma"
+                        android:text="Reconocimiento de idioma"
                         android:textAlignment="textStart"
                         android:textIsSelectable="false"
                         android:textSize="15sp"
                         android:textStyle="bold"
                         app:cornerRadius="10dp"
-                        app:icon="@drawable/mapa"
+                        app:icon="@drawable/texto"
                         app:iconSize="55dp" />
                 </LinearLayout>
 
