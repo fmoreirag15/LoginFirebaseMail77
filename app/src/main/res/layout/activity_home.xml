@@ -124,7 +124,7 @@
 
             <LinearLayout
                 android:layout_width="match_parent"
-                android:layout_height="345dp"
+                android:layout_height="337dp"
                 android:orientation="vertical"
                 android:paddingTop="10dp">
 
@@ -135,20 +135,19 @@
 
                     <Button
                         android:id="@+id/btnPaciente"
-                        android:layout_width="wrap_content"
+                        android:layout_width="207dp"
                         android:layout_height="94dp"
                         android:layout_margin="10dp"
                         android:layout_weight="1"
                         android:backgroundTint="#552089"
                         android:fontFamily="@font/abel"
-                        android:onClick="addPaciente"
-                        android:text="Paciente"
+                        android:text="Lista de paciente"
                         android:textAlignment="textStart"
                         android:textIsSelectable="false"
                         android:textSize="15dp"
                         android:textStyle="bold"
                         app:cornerRadius="10dp"
-                        app:icon="@drawable/pacient"
+                        app:icon="@drawable/lista"
                         app:iconSize="55dp" />
 
                     <Button
@@ -159,7 +158,8 @@
                         android:layout_weight="1"
                         android:backgroundTint="#FF824D"
                         android:fontFamily="@font/abel"
-                        android:text="Ver mapa"
+                        android:onClick="goMapa"
+                        android:text="Ir a Mapa"
                         android:textAlignment="textStart"
                         android:textIsSelectable="false"
                         android:textSize="15sp"
@@ -183,16 +183,17 @@
                         android:backgroundTint="#4CAF50"
                         android:fontFamily="@font/abel"
                         android:onClick="addPaciente"
-                        android:text="Añadir paciente"
+                        android:text="Añadir paciente y dispositivo"
                         android:textAlignment="textStart"
                         android:textIsSelectable="false"
                         android:textSize="15dp"
                         android:textStyle="bold"
                         app:cornerRadius="10dp"
-                        app:icon="@drawable/pacient"
+                        app:icon="@drawable/icons8_user_64px"
                         app:iconSize="55dp" />
 
                 </LinearLayout>
+
                 <LinearLayout
                     android:layout_width="match_parent"
                     android:layout_height="108dp"
@@ -200,18 +201,19 @@
 
                     <Button
                         android:id="@+id/btnPatiente"
-                        android:layout_width="wrap_content"
+                        android:layout_width="162dp"
                         android:layout_height="94dp"
                         android:layout_margin="10dp"
                         android:layout_weight="1"
                         android:backgroundTint="#048ADA"
                         android:fontFamily="@font/abel"
+                        android:text="Reporte"
                         android:textAlignment="textStart"
                         android:textIsSelectable="false"
                         android:textSize="15dp"
                         android:textStyle="bold"
                         app:cornerRadius="10dp"
-                        app:icon="@drawable/pacient"
+                        app:icon="@drawable/reporte"
                         app:iconSize="55dp" />
 
                     <Button
@@ -223,13 +225,13 @@
                         android:backgroundTint="#E8027D"
                         android:fontFamily="@font/abel"
                         android:onClick="goReconocimientoIdioma"
-                        android:text="Reconocimiento de idioma"
+                        android:text="Traductor"
                         android:textAlignment="textStart"
                         android:textIsSelectable="false"
                         android:textSize="15sp"
                         android:textStyle="bold"
                         app:cornerRadius="10dp"
-                        app:icon="@drawable/texto"
+                        app:icon="@drawable/traductor"
                         app:iconSize="55dp" />
                 </LinearLayout>
 
@@ -244,14 +246,14 @@
                     android:id="@+id/textView13"
                     android:layout_width="match_parent"
                     android:layout_height="wrap_content"
-                    android:layout_marginTop="10dp"
+                    android:layout_marginTop="2dp"
                     android:fontFamily="@font/abel"
-                    android:text="Notificaciones del día"
+                    android:text="Información del día"
                     android:textColor="#474646"
-                    android:textSize="17dp"
-                    android:textStyle="bold" />
+                    android:textSize="20sp" />
 
                 <androidx.recyclerview.widget.RecyclerView
+                    android:layout_marginTop="5dp"
                     android:layout_width="match_parent"
                     android:layout_height="280dp">
 

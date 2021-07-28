@@ -41,6 +41,12 @@ public class HomeActivity extends AppCompatActivity {
         i.putExtra("idUsuario",idUsuario);
         startActivity(i);
     }
+    public void goMapa(View view)
+    {
+        Intent i = new Intent(HomeActivity.this,mapa.class);
+        i.putExtra("idUsuario",idUsuario);
+        startActivity(i);
+    }
     public void goReconocimientoIdioma(View view)
     {
         Intent i = new Intent(HomeActivity.this,reconocerIdioma.class);
